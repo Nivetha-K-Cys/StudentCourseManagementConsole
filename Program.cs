@@ -1,9 +1,13 @@
+using StudentCourseManagementConsole.Helpers;
 using StudentCourseManagementConsole.Repositories;
 using StudentCourseManagementConsole.Services;
+
 
 var departmentService = new DepartmentService(new DepartmentRepository());
 var studentService = new StudentService(new StudentRepository());
 var courseService = new CourseService(new CourseRepository());
+
+await DatabaseHelper.TestConnectionAsync();
 
 while (true)
 {
